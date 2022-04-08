@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Environment Management System</string>
+    <string name="title">EMS</string>
+    <string name="volume">%d Kg</string>
+    <string name="rupiah">Rp. %d</string>
+    <string name="plastik">Plastik</string>
+    <string name="kaca">Kaca</string>
+    <string name="kertas">Kertas</string>
+    <string name="baterai">Baterai</string>
+    <string name="besi">Besi</string>
+    <string name="obat">Obat</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tab_text_1">Home</string>
+    <string name="tab_text_2">Profile</string>
+</resources>
