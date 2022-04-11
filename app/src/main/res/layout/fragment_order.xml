@@ -42,6 +42,7 @@
             android:textAppearance="?attr/textAppearanceHeadline6"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/weight"
+            android:text="@string/type"
             tools:text="Plastik" />
 
         <TextView

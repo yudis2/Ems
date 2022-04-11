@@ -1,16 +1,40 @@
 <resources>
     <string name="app_name">Environment Management System</string>
     <string name="title">EMS</string>
+
     <string name="volume">%d Kg</string>
     <string name="rupiah">Rp. %d</string>
+    <string name="type">-</string>
+
+    // string type name
     <string name="plastik">Plastik</string>
     <string name="kaca">Kaca</string>
     <string name="kertas">Kertas</string>
     <string name="baterai">Baterai</string>
     <string name="besi">Besi</string>
     <string name="obat">Obat</string>
+
+    // name for tab menu
+    <string name="tab_text_1">Beranda</string>
+    <string name="tab_text_2">Toko</string>
+    <string name="tab_text_3">Profil</string>
+
+    // profile tab
+    <string name="guest">Guest</string>
+    <string name="sampah">Sampah Dibuang</string>
+    <string name="no_value">-</string>
+    <string name="penjualan">Penjualan</string>
+    <string name="logout">Logout</string>
+
+    // feeds tab
+    <string name="kerajinan">Kerajinan</string>
+    <string name="tpt_sampah">Tempat Sampah Alumunium</string>
+    <string name="sandal">Sandal Karet</string>
+    <string name="beli">Beli</string>
+
+    // FeedDummy
+    <string name="harga">Rp.10000</string>
+    <string name="harga2">Rp.15000</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="tab_text_1">Home</string>
-    <string name="tab_text_2">Profile</string>
 </resources>
