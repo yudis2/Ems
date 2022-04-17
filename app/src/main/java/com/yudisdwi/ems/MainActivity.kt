@@ -30,9 +30,6 @@ class MainActivity : AppCompatActivity() {
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        /**
-         * Hapus baris kode yang tidak digunakan
-         */
         // Get the navigation host fragment from this Activity
 //        val navHostFragment = supportFragmentManager
 //            .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
@@ -43,16 +40,6 @@ class MainActivity : AppCompatActivity() {
 
         //tab layout
         val sectionsPagerAdapter = PagerAdapter(this)
-        /**
-         * Baris di bawah ini, sebenarnya bisa digantikan dengan view binding. Sehingga tidak ada
-         * lagi fungsi ```findViewById()``` dan tidak akan terjadi ```NullPointerException``` saat
-         * sistem membaca komponen di dalam View.
-         *
-         * ```
-         * binding.viewPager.adapter = sectionsPagerAdapter
-         * TabLayoutMediator(binding.tabs, binding.viewPager) { tab, position -> ...
-         * ```
-         */
         val viewPager: ViewPager2 = findViewById(R.id.view_pager)
         viewPager.adapter = sectionsPagerAdapter
         val tabs: TabLayout = findViewById(R.id.tabs)

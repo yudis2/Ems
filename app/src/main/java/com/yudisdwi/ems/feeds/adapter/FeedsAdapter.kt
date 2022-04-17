@@ -15,10 +15,6 @@ class FeedsAdapter(
     private val dataset: List<Feeds>
 ) : RecyclerView.Adapter<FeedsAdapter.ItemViewHolder>() {
 
-    /**
-     * Klausa "private val" dapat dihapus pada constructor karena variable view tidak pernah
-     * digunakan sebagai property.
-     */
     class ItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
         val textView: TextView = view.findViewById(R.id.item_name)
         val tvView: TextView = view.findViewById(R.id.item_price)
@@ -26,13 +22,6 @@ class FeedsAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
-        /**
-         * Sebaiknya implementasikan view binding di adapter RecyclerView juga.
-         * ```
-         * val binding = ItemFeeds.inflate(LayoutInflater.from(parent.context), parent, false)
-         * return ItemViewHolder(binding.root)
-         * ```
-         */
         val adapterLayout = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_feeds, parent, false)
 

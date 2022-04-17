@@ -30,12 +30,6 @@ class FeedsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val myDataset = DataFeeds().loadFeeds()
-        /**
-         * Bisa digantikan dengan view binding
-         * ```
-         * recyclerView = binding.rvFeeds
-         * ```
-         */
         recyclerView = view.findViewById(R.id.rv_feeds)
         recyclerView.layoutManager = LinearLayoutManager(context)
         recyclerView.adapter = FeedsAdapter(this, myDataset)
