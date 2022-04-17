@@ -16,7 +16,11 @@ class TrashAdapter(
     private val dataset: List<Trash>,
     private var callback: OrderFragmentCallback
 ) : RecyclerView.Adapter<TrashAdapter.ItemViewHolder>() {
-    
+
+    /**
+     * Klausa "private val" dapat dihapus pada constructor karena variable view tidak pernah
+     * digunakan sebagai property.
+     */
     class ItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
         val textView: TextView = view.findViewById(R.id.item_type)
         val imageView: ImageView = view.findViewById(R.id.item_image)
@@ -24,6 +28,13 @@ class TrashAdapter(
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
+        /**
+         * Sebaiknya implementasikan view binding di adapter RecyclerView juga.
+         * ```
+         * val binding = ItemTypeTrash.inflate(LayoutInflater.from(parent.context), parent, false)
+         * return ItemViewHolder(binding.root)
+         * ```
+         */
         val adapterLayout = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_type_trash, parent, false)
 

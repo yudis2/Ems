@@ -14,6 +14,9 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+        /**
+         * Bisa di inflate dengan view binding
+         */
         return inflater.inflate(R.layout.fragment_profile, container, false)
     }
 }

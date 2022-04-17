@@ -16,6 +16,11 @@ import com.yudisdwi.ems.order.data.DataSource
 import com.yudisdwi.ems.order.model.Trash
 
 class OrderFragment : Fragment(), OrderFragmentCallback {
+    /**
+     * Hati-hati dengan kebocoran memori (Memory Leak) disini, jangan lupa meng-override fungsi
+     * onDestroy() dan inisialisasi variable _binding dengan null.
+     * Kamu bisa mendeteksi suatu kebocoran memori dengan bantuan library LeakCanary.
+     */
     private var _binding: FragmentOrderBinding? = null
     private val binding get() = _binding!!
     private lateinit var recyclerView: RecyclerView
@@ -44,6 +49,9 @@ class OrderFragment : Fragment(), OrderFragmentCallback {
         binding.weight.text = getString(R.string.volume, 0)
         binding.price.text = getString(R.string.rupiah, 0)
 
+        /**
+         * Hapus baris kode yang tidak digunakan
+         */
 //        trashAdapter = TrashAdapter(this, myDataset)
 //        trashAdapter.setOnItemClickCallback(object : TrashAdapter.OnItemClickCallback{
 //            override fun onItemClicked(data: Trash) {
@@ -53,6 +61,9 @@ class OrderFragment : Fragment(), OrderFragmentCallback {
 
         seekBar = view.findViewById(R.id.volume)
         seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            /**
+             * Usahakan tidak untuk men-suppress kode, agar warning lain yang serupa tidak tertutupi oleh Suppress ini
+             */
             @SuppressLint("SetTextI18n")
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, user: Boolean) {
                 weight(progress)
@@ -68,6 +79,13 @@ class OrderFragment : Fragment(), OrderFragmentCallback {
         })
     }
 
+    /**
+     * Untuk menggabungkan string, sebaiknya dipisah antara property dengan variable, seperti:
+     * ```
+     * val weightStr = "$progress Kg"
+     * binding.weight.text = weightStr
+     * ```
+     */
     private fun weight(progress: Int) {
         binding.weight.text = progress.toString() + " Kg"
     }
